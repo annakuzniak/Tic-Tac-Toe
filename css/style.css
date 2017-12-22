@@ -1,0 +1,70 @@
+body {
+  background-color: #004e66;
+}
+
+table {
+  margin: 0 auto;
+  border-radius:10px;
+}
+td {
+  border: 1px solid #009e9e;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  font-size: 5em;
+  font-family: "DejaVu Sans";
+  box-sizing:border-box;
+}
+
+td:hover{
+  cursor: move;
+}
+
+
+td:first-child{
+  border-left: none;
+}
+td:last-child{
+  border-right: none;
+}
+
+td:nth-child(2n+2){
+  border-right: none;
+  border-left: none;
+}
+
+thead tr td{
+  border-top: none;
+  border-bottom: none;
+}
+
+tfoot tr td{
+  border-top:none;
+  border-bottom: none;
+}
+
+.container, .playerTurn {
+  text-align: center;
+}
+
+
+#reset {
+  position: relative;
+  vertical-align: top;
+  width: 15%;
+  height: 60px;
+  padding: 0;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #16a085;
+  border: 0;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #14947b;
+  box-shadow: inset 0 -2px #14947b;
+}
+
+#reset:hover{
+  background: #14947b;
+}
