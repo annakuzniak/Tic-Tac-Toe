@@ -1,7 +1,7 @@
-
 window.onload = function(){
-  new Game().start();
-
+  setTimeout(function () {
+      new Game().start()
+  }, 50)
 };
 
 
@@ -20,11 +20,11 @@ function Game() {
 Game.prototype.start = function(){
     this.addXandOListener();
     this.addResetListener();
-    this.XName = prompt('What\'s your name?');
-    this.OName = prompt('What\'s your name?');
-    document.getElementById("XWins").innerHTML = this.XName + "- ilość wygranych: " + this.XWinsCounter;
-    document.getElementById("OWins").innerHTML = this.OName + "- ilość wygranych: " + this.OWinsCounter;
-
+    this.XName = prompt('What\'s your name? for x');
+    this.OName = prompt('What\'s your name? for 0');
+    document.getElementById("XWins").innerHTML = this.XName + "(x) - ilość wygranych: " + this.XWinsCounter;
+    document.getElementById("OWins").innerHTML = this.OName + "(o) - ilość wygranych: " + this.OWinsCounter;
+    this.resetBoard();
 
 };
 
@@ -45,7 +45,7 @@ Game.prototype.addXorO = function(event){
         this.counter++;
           if(this.checkForWin(this.OMoves, this.OName)) {
             this.OWinsCounter++;
-            document.getElementById("OWins").innerHTML = this.OName + " - ilość wygranych: " + this.OWinsCounter;
+            document.getElementById("OWins").innerHTML = this.OName + "(O) - ilość wygranych: " + this.OWinsCounter;
         }
       }
       else {
@@ -55,8 +55,9 @@ Game.prototype.addXorO = function(event){
         this.turnText.innerHTML = this.OName + "'s turn";
         this.counter++;
           if(this.checkForWin(this.XMoves, this.XName)) {
+              console.log("wygrał x");
             this.XWinsCounter++;
-            document.getElementById("XWins").innerHTML =  this.XName + " - ilość wygranych: " + this.XWinsCounter;
+            document.getElementById("XWins").innerHTML =  this.XName + "(X) - ilość wygranych: " + this.XWinsCounter;
         }
       }
 
@@ -90,6 +91,7 @@ Game.prototype.addResetListener = function(){
             alert("Game over, " + name + " wins!");
             resetBoard();
         }, 50);
+        return true;
       }
     }
   }
@@ -108,5 +110,5 @@ Game.prototype.addResetListener = function(){
     this.winCounter = 0;
     this.counter = 0;
     this.win = false;
-    this.turnText.innerHTML = "It is " + this.XName + "'s turn";
+    this.turnText.innerHTML = "It is " + this.OName + "'s turn";
  };

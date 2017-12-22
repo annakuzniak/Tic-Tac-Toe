@@ -1,13 +1,17 @@
 body {
-  background-color: #004e66;
+  background-image: url("../images/pexels-photo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 table {
   margin: 0 auto;
-  border-radius:10px;
+  padding: 45px;
+  background-color: rgba(35, 31, 31, 0.59);
 }
+
 td {
-  border: 1px solid #009e9e;
+  border: 5px solid rgba(48, 44, 44, 1);
   width: 200px;
   height: 200px;
   text-align: center;
@@ -19,7 +23,6 @@ td {
 td:hover{
   cursor: move;
 }
-
 
 td:first-child{
   border-left: none;
@@ -47,7 +50,6 @@ tfoot tr td{
   text-align: center;
 }
 
-
 #reset {
   position: relative;
   vertical-align: top;
@@ -67,4 +69,15 @@ tfoot tr td{
 
 #reset:hover{
   background: #14947b;
+}
+
+#XWins, #OWins {
+  font-size: 25px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.playerTurn {
+  font-size: 30px;
+  text-transform: uppercase;
 }
